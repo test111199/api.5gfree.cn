@@ -30,11 +30,13 @@ function apiCurlGet($url,$header = array())
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
         $output = curl_exec($curl);
 //$info = curl_getinfo($curl);
-        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
+//        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 // print_r($request_header);
 // echo "<br>如上为头文件传输内容!<br>";
                   curl_close($curl);
                   $output = json_decode($output,true);
+echo '调用联通端口返回数据：<br>';
+var_dump($restData);   
                   return $output;
           }
 
