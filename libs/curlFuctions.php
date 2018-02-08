@@ -25,11 +25,11 @@ function apiCurlGet($url,$header = array())
 //                  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 //                  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($curl, CURLINFO_HEADER_OUT, true);
-//                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 //print_r($header);
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
 echo '准备调用联通接口：<br>';
-        $output = curl_exec($curl);
+        $output = json_decode(curl_exec($curl));
 //$info = curl_getinfo($curl);
 //        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 // print_r($request_header);
