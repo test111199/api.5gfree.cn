@@ -81,10 +81,10 @@
     $restData = apiCurlGet($restURL,$headerArray); 
 //    $restData = json_decode($rest,true);
   
-  echo '调用联通端口返回数据：'.$restData.'<br>';
-    
-    $DataUsage = $restData['$ctdDataUsage'];
-    
+echo '调用联通端口返回数据：<br>';
+var_dump($restData);   
+   
+    $DataUsage = $restData['ctdDataUsage'];    
     echo '用户当前使用流量为：' .$DataUsage;
 //var_dump(0);
 //exit;
