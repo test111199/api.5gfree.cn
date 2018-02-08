@@ -4,6 +4,8 @@
     require_once  ("libs/mysql.inc.php");
     require_once  ("libs/curlFuctions.php");
 
+var_dump(0); 
+exit;
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
     $userAccount = $_POST['sndUser_Act'];
