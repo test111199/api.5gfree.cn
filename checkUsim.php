@@ -85,7 +85,7 @@
     
     $DataUsage = $restData['$ctdDataUsage'];
     
-    echo '用户当前使用流量为：' $DataUsage;
+    echo '用户当前使用流量为：' .$DataUsage;
 //var_dump(0);
 //exit;
     
