@@ -1,94 +1,98 @@
 <?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: 流年 <liu21st@gmail.com>
+// +----------------------------------------------------------------------
 
+// 应用公共文//
+//echo "加载curl公共函数！<br>";
 
-        $headerArray = array(
-                                        "Content-type:application/json;",
-                                        "Accept:application/json",
-                                        "Authorization: Basic eGlhb3poaWdhbmc6N2IzOTdiNDQtNzZiYy00MjU5LWJhOTYtMDI1MzFhODQ3N2Ni"
-                                        );
-/*
-        $input_iccid = '89860617010001672760';
-        $getDetail_url = 'https://api.10646.cn/rws/api/v1/devices/'.$input_iccid; //获取设备详细信息
-        $getModify_url = 'https://api.10646.cn/rws/api/v1/devices/'.$input_iccid.'/auditTrails?daysOfHistory=30&pageSize=50&pageNumber=1'; //获取设备修改记录
-        $getUse_url =  'https://api.10646.cn/rws/api/v1/devices/'.$input_iccid.'/ctdUsages';  //获取设备周期内使用量
-        $putSetup_url = 'https://api.10646.cn/rws/api/v1/devices/'.$input_iccid;
-        $putData = array (
-                        'status' => 'ACTIVATED',
-                        'deviceID' => 'Test Nov 27');
-        $postSmsSend_url = 'https://api.10646.cn/rws/api/v1/devices/'.$input_iccid.'/smsMessages';
-        $postData = array (
-                         'messageText' => '测试2017-Nov-17 13:48');
-                         
-                         
-        $rest = apiCurlGet($getDetail_url,$headerArray);
-echo "查询设备详情功能，调用apiCurlGet Function!<br>";
-        print_r($rest);
- 
+  $headerArray = array(
+                       "Content-type:application/json;",
+                       "Accept:application/json",
+                       "Authorization: Basic eGlhb3poaWdhbmc6N2IzOTdiNDQtNzZiYy00MjU5LWJhOTYtMDI1MzFhODQ3N2Ni");
 
-echo "查询设备变更功能，调用apiCurlGet Function，url带有参数!<br>";
-        $rest = apiCurlGet($getModify_url,$headerArray);
-        print_r($rest);
-
-
-echo "查询设备用量功能，调用apiCurlGet Function，url带有参数!<br>";
-        $rest = apiCurlGet($getUse_url,$headerArray);
-        print_r($rest);                         
-*/
-
-function geturl($url){
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl,CURLOPT_HTTPHEADER,$headerArray);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        $output = json_decode($output,true);
-        return $output;
-}
-
-
-function posturl($url,$data){
-        $data  = json_encode($data);    
+function apiCurlGet($url,$header = array())
+       {
+// echo "显示传入url:  ".$url." <br>";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,FALSE);
-        curl_setopt($curl, CURLOPT_POST, 1);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl,CURLOPT_HTTPHEADER,$headerArray);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+//                  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+//                  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($curl, CURLINFO_HEADER_OUT, true);
+//                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//print_r($header);
+        curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
         $output = curl_exec($curl);
-        curl_close($curl);
-        return json_decode($output，true);
-}
+//$info = curl_getinfo($curl);
+        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
+// print_r($request_header);
+// echo "<br>如上为头文件传输内容!<br>";
+                  curl_close($curl);
+                  $output = json_decode($output,true);
+                  return $output;
+          }
 
 
-function puturl($url,$data){
-    $data = json_encode($data);
-    $ch = curl_init(); //初始化CURL句柄 
-    curl_setopt($ch, CURLOPT_URL, $url); //设置请求的URL
-    curl_setopt ($ch, CURLOPT_HTTPHEADER, $headerArray);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); //设为TRUE把curl_exec()结果转化为字串，而不是直接输出 
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"PUT"); //设置请求方式
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);//设置提交的字符串
-    $output = curl_exec($ch);
-    curl_close($ch);
-    return json_decode($output,true);
-}
+function apiCurlPost($url,$data,$header = array()){
+                  $data  = json_encode($data);
+// echo "这里是apiCurlPost Function，显示json后的的传输数组data: ".$data."<br>";
+                  $curl = curl_init();
+                  curl_setopt($curl, CURLOPT_URL, $url);
+//                  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+//                  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,FALSE);
+                  curl_setopt($curl, CURLOPT_POST, 1);
+                  curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                  curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
+curl_setopt($curl, CURLINFO_HEADER_OUT, true);
+                  $output = curl_exec($curl);
+$request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
+// print_r($request_header);
+// echo "<br>如上为头文件传输内容!<br>";
 
-function delurl($url,$data){
-    $data  = json_encode($data);
-    $ch = curl_init();
-    curl_setopt ($ch,CURLOPT_URL,$put_url);
-    curl_setopt ($ch, CURLOPT_HTTPHEADER, $headerArray);
-    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt ($ch, CURLOPT_CUSTOMREQUEST, "DELETE");   
-    curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
-    $output = curl_exec($ch);
-    curl_close($ch);
-    $output = json_decode($output,true);
-}
+//                  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                  curl_close($curl);
+                  return json_decode($output，true);
+         }
+
+
+ function apiCurlPut($url,$data,$header = array()){
+                  $data = json_encode($data);
+echo "这里是apiCurlPut Function，显示json后的的传输数组data: ".$data."<br>";
+                  $curl = curl_init(); //初始化CURL句柄
+                  curl_setopt($curl, CURLOPT_URL, $url); //设置请求的URL
+                  curl_setopt ($curl, CURLOPT_HTTPHEADER, $header);
+//                  curl_setopt($curl, CURLOPT_RETURNTRANSFER,1); //设为TRUE把curl_exec()结果转化为字串，而不是直接输出
+                  curl_setopt($curl, CURLOPT_CUSTOMREQUEST,"PUT"); //设置请求方式
+                  curl_setopt($curl, CURLOPT_POSTFIELDS, $data);//设置提交的字符串
+curl_setopt($curl, CURLINFO_HEADER_OUT, true);
+                  $output = curl_exec($curl);
+echo "<br>";
+$request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
+print_r($request_header);
+$info = curl_getinfo($curl);
+echo "<br>如上为头文件传输内容!<br>";
+print_r($info);
+                  curl_close($curl);
+                  return json_decode($output,true);
+          }
+
+function curlApiDel($url,$data,$header = array()){
+                  $data  = json_encode($data);
+                  $curl = curl_init();
+                  curl_setopt ($curl,CURLOPT_URL,$url);
+                  curl_setopt ($curl, CURLOPT_HTTPHEADER, $header);
+                  curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
+                  curl_setopt ($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+                  curl_setopt($curl, CURLOPT_POSTFIELDS,$data);
+                  $output = curl_exec($curl);
+                  curl_close($curl);
+                  $output = json_decode($output,true);
+          }
 
 ?>

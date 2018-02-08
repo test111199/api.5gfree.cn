@@ -30,7 +30,7 @@ exit;
                                     "JapserData"                                 
                                     );
     
-    $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' or SN = '$codeID' ";
+    $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' ";
     list($userStatus,$userID,$userOrgID,$userLevel) = checkUser($strsql);
     
     if($userStatus = 0){
@@ -39,6 +39,7 @@ exit;
         exit;
     }
 
+/*
     $strsql = "SELECT simStatus FROM IoT_USIM  WHERE simICCID LIKE '$simIccid%' ";
     list($simStatus,$simICCID,$simUserID,$simOrgID) = checkUsim($strsql);
     
@@ -61,13 +62,15 @@ exit;
     else{
         $fuctionSelect = $fuctionID;  
     }
-    
+ 
+ */   
+  
     switch ($fuctionSelect){
         case "1":
-            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simICCID.'/ctdUsages';
+            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simIccid.'/ctdUsages';
             break;
         case "2":
-            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simICCID;
+            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simIccid;
             break;
         default:
             echo $return_msg [4];
@@ -83,7 +86,8 @@ exit;
     $DataUsage = $restData['$ctdDataUsage'];
     
     echo  $DataUsage;
-
+//var_dump(0);
+//exit;
     
  // 查询数据库用户是否存在，如果存在返回userID和userOrgID；
     function checkUser($sqlStr)
