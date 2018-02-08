@@ -29,7 +29,7 @@ function apiCurlGet($url,$header = array())
 //print_r($header);
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
 echo '准备调用联通接口：<br>';
-        $output = json_decode(curl_exec($curl));
+        $output = curl_exec($curl);
 //$info = curl_getinfo($curl);
 //        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 // print_r($request_header);
