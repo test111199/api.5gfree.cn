@@ -25,7 +25,7 @@ function apiCurlGet($url,$header = array())
 //                  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 //                  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($curl, CURLINFO_HEADER_OUT, true);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 //print_r($header);
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
 echo '准备调用联通接口：<br>';
