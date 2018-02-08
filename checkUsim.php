@@ -4,8 +4,6 @@
     require_once  ("libs/mysql.inc.php");
     require_once  ("libs/curlFuctions.php");
 
-var_dump(0); 
-exit;
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
     $userAccount = $_POST['sndUser_Act'];
@@ -14,7 +12,7 @@ exit;
 
     $fuctionID = 1;
     $userAccount = '13901161496';
-    $simIccid = '8986061704000978326';
+    $simIccid = '89860617040009783269';
     $fuctionSelect = 1;
 // functionID 0:查询user是否存在，其提交ICCID是否存在，存在则查询流量
 //   $simIccid = "143DF290720F";    
