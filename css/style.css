@@ -15,7 +15,7 @@ body a:hover{
 }
 /*-- banner --*/
 .banner{
-	background:url(../images/banner.png) no-repeat 0px 0px;
+	background:url(../img/banner.png) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -52,7 +52,7 @@ body a:hover{
 button.navig {
     width: 50px;
     height: 50px;
-    background: url(../images/menu.png) no-repeat;
+    background: url(../img/menu.png) no-repeat;
     display: block;
     outline: none;
     border: 0;
@@ -135,17 +135,17 @@ button.navig {
 	margin: 0 10px 0 0;
 }
 .banner-info-right ul li a.facebook{
-	background:url(../images/img-sp.png) no-repeat -11px -21px;
+	background:url(../img/img-sp.png) no-repeat -11px -21px;
 	display:block;
 	height:24px;
 	width:24px;
 }
 .banner-info-right ul li a.facebook:hover{
-	background:url(../images/img-sp.png) no-repeat -46px -21px;
+	background:url(../img/img-sp.png) no-repeat -46px -21px;
 	display:block;
 }
 .banner-info-right ul li a.twitter{
-	background:url(../images/img-sp.png) no-repeat -11px -60px;
+	background:url(../img/img-sp.png) no-repeat -11px -60px;
 	display:block;
 	height:24px;
 	width:24px;
@@ -155,23 +155,23 @@ button.navig {
 	display:block;
 }
 .banner-info-right ul li a.p{
-	background:url(../images/img-sp.png) no-repeat -11px -108px;
+	background:url(../img/img-sp.png) no-repeat -11px -108px;
 	display:block;
 	height:24px;
 	width:24px;
 }
 .banner-info-right ul li a.p:hover{
-	background:url(../images/img-sp.png) no-repeat -48px -108px;
+	background:url(../img/img-sp.png) no-repeat -48px -108px;
 	display:block;
 }
 .banner-info-right ul li a.be{
-	background:url(../images/img-sp.png) no-repeat -9px -151px;
+	background:url(../img/img-sp.png) no-repeat -9px -151px;
 	display:block;
 	height:24px;
 	width:24px;
 }
 .banner-info-right ul li a.be:hover{
-	background:url(../images/img-sp.png) no-repeat -47px -151px;
+	background:url(../img/img-sp.png) no-repeat -47px -151px;
 	display:block;
 }
 .copyrights{
@@ -246,7 +246,7 @@ p.fugiat{
 /*-- //banner-bottom --*/
 /*-- services --*/
 .services{
-	background:url(../images/2.png) no-repeat 0px 0px;
+	background:url(../img/2.png) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
