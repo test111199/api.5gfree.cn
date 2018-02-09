@@ -41,7 +41,7 @@
             <div class="banner-info">
                 <div class="banner-info-left">
                     <h3>物联网卡信息查询</h3>
-                    <form name="chkUsim" id="chkUsim" action="" method="post" onsubmit="checkUsim()">
+                    <form name="chkUsim" id="chkUsim" action="checkUsim.php" method="post" onsubmit="checkInput()">
                         <div class="panel panel-verydanger">
                             <div class="panel-heading">请输入您的电话号码 </div>
                             <div class="panel-body">
@@ -66,9 +66,6 @@
                             </div>                               
                         </div>
 -->
-<script type="text/javascript">
-alert("进入网页表单！");
-</script>
                         <input type="submit" value="提交" >
                     </form>
                 </div>
@@ -101,7 +98,7 @@ alert("进入网页表单！");
 								
 			});
 		
-		function checkUsim()	
+		function checkInput()	
 		{
 			
 		    var account=document.getElementById("accMobile").value;
@@ -119,8 +116,9 @@ alert("进入网页表单！");
             else if(accountLen!=11 or iccidLen!=20 ){
                 alert("输入账号或ICCID有误，请检查位数是否正确");
             }
-            else{            
-               $.ajax({
+            else{         
+               alert("输入正确");
+/*               $.ajax({
                     type: 'post',
                     url: "http://api.5gfree.cn:8090/checkUsim.php",
                     async:false,
@@ -134,7 +132,7 @@ alert("进入网页表单！");
                     error: function() {
                         alert("数据库链接异常，请联系客服人员。");
                     }
-                });  
+                });  */
             }                  
 		}
     </script>
