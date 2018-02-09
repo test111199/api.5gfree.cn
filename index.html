@@ -77,7 +77,7 @@ alert("收到提交按键");
             <div class="banner-info">
                 <div class="banner-info-left">
                     <h3>物联网卡信息查询</h3>
-                    <form name="chkUsim" id="chkUsim" action="index.html" method="post" onsubmit="return checkInput(); ">
+                    <form name="chkUsim" id="chkUsim" action="index.html" method="post" >
                         <div class="panel panel-verydanger">
                             <div class="panel-heading">请输入您的电话号码 </div>
                             <div class="panel-body">
@@ -99,7 +99,7 @@ alert("收到提交按键");
                 		            </select>
                                 </div>                               
                             </div> -->
-                        <input type="submit" value="提交" > 
+                        <input type="submit" value="提交" onClick ="checkInput()" > 
                     </form>
                 <div class="banner-info-right">
                 </div>
