@@ -28,19 +28,19 @@ function apiCurlGet($url,$header = array())
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 //print_r($header);
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
-//echo '准备调用联通接口：<br>';
+// echo '准备调用联通接口：<br>';
         $output = curl_exec($curl);
-//$info = curl_getinfo($curl);
+// $info = curl_getinfo($curl);
 //        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 // print_r($request_header);
 // echo "<br>如上为头文件传输内容!<br>";
-//echo '调用联通端口返回数据json格式：<br>';
-//var_dump($output);  
+// echo '调用联通端口返回数据json格式：<br>';
+// var_dump($output);  
                 curl_close($curl);
                 $output = json_decode($output,true);
 
-//echo '调用联通端口返回数据array格式：<br>';
-//var_dump($output);  
+// echo '调用联通端口返回数据array格式：<br>';
+// var_dump($output);  
                   return $output;
           }
 
@@ -69,7 +69,7 @@ $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 
  function apiCurlPut($url,$data,$header = array()){
                   $data = json_encode($data);
-echo "这里是apiCurlPut Function，显示json后的的传输数组data: ".$data."<br>";
+// echo "这里是apiCurlPut Function，显示json后的的传输数组data: ".$data."<br>";
                   $curl = curl_init(); //初始化CURL句柄
                   curl_setopt($curl, CURLOPT_URL, $url); //设置请求的URL
                   curl_setopt ($curl, CURLOPT_HTTPHEADER, $header);
