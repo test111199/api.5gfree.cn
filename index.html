@@ -41,7 +41,7 @@
             <div class="banner-info">
                 <div class="banner-info-left">
                     <h3>物联网卡信息查询</h3>
-                    <form name="chkUsim" id="chkUsim" action="checkUsim.php" method="post" onsubmit="return checkInput()">
+                    <form name="chkUsim" id="chkUsim" action="" method="post" onsubmit="">
                         <div class="panel panel-verydanger">
                             <div class="panel-heading">请输入您的电话号码 </div>
                             <div class="panel-body">
@@ -95,9 +95,8 @@
 								
 			});
 		
-		$("btnSubmit").click(function checkInput()	
-		{
-			
+		$("btnSubmit").click(function (){
+alert("收到提交按键");   			
 		    var account=document.getElementById("accMobile").value;
             var iccid=document.getElementById("chkIccid").value;
 /*            var functionID=document.getElementById("selFunction").value;           */
