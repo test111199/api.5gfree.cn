@@ -28,20 +28,19 @@ function apiCurlGet($url,$header = array())
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 //print_r($header);
         curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
-echo '准备调用联通接口：<br>';
+//echo '准备调用联通接口：<br>';
         $output = curl_exec($curl);
 //$info = curl_getinfo($curl);
 //        $request_header = curl_getinfo( $curl, CURLINFO_HEADER_OUT);
 // print_r($request_header);
 // echo "<br>如上为头文件传输内容!<br>";
-echo '调用联通端口返回数据json格式：<br>';
-var_dump($output);   
+//echo '调用联通端口返回数据json格式：<br>';
+//var_dump($output);  
+                curl_close($curl);
+                $output = json_decode($output,true);
 
-                  curl_close($curl);
-                  $output = json_decode($output,true);
-
-echo '调用联通端口返回数据array格式：<br>';
-var_dump($output);  
+//echo '调用联通端口返回数据array格式：<br>';
+//var_dump($output);  
                   return $output;
           }
 
