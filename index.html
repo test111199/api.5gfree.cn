@@ -26,30 +26,31 @@
     </script>
 <!-- end-smoth-scrolling -->
 <script type="text/javascript">
-/*		function checkInput(){
-alert("收到提交按键");   			
-		    var account=document.getElementById("accMobile").value;
-            var iccid=document.getElementById("chkIccid").value;
-            var functionID=document.getElementById("selFunction").value;        
-            var accountLen=document.getElementById("accMobile").value.length;
-            var iccidLen=document.getElementById("chkIccid").value.length;
+	function checkInput(){
+alert("进入函数checkInput");  			
+//		    var account=document.getElementById("accMobile").value;
+//            var iccid=document.getElementById("chkIccid").value;
+ //           var functionID=document.getElementById("selFunction").value;        
+//            var accountLen=document.getElementById("accMobile").value.length;
+//            var iccidLen=document.getElementById("chkIccid").value.length;
             
-            var reg=/^[1-9]\d*$|^0$/; 
+//            var reg=/^[1-9]\d*$|^0$/; 
               
-            if(reg.test(account)!=true or reg.test(iccid)!=true){
-                alert("输入账号或ICCID有误，请检查是否均为正确格式");   
-            }
-            else if(accountLen!=11 or iccidLen!=20 ){
-                alert("输入账号或ICCID有误，请检查位数是否正确");
-            }
-            else{         
-               alert("输入正确");
+//            if(reg.test(account)!=true or reg.test(iccid)!=true){
+//                alert("输入账号或ICCID有误，请检查是否均为正确格式");   
+//            }
+//            else 
+//            if(accountLen!=11 or iccidLen!=20 ){
+//                alert("输入账号或ICCID有误，请检查位数是否正确");
+//            }
+ //           else{         
+ //              alert("输入正确");
               $.ajax({
                     type: 'post',
                     url: "http://api.5gfree.cn:8090/checkUsim.php",
                     async:false,
                     cache:false,
-                    data: {sndFuction_ID:functionID,sndUser_Ac:account,sndSim_Iccid:iccid},
+                    data:$('#chkUsim').serialize(),
 //                  dataType: 'json',
                     success: function(data) {
 //alert("进入ajax success 函数内部\n 发送参数："+ functionID + "/"+iccid);               
@@ -59,14 +60,8 @@ alert("收到提交按键");
                         alert("数据库链接异常，请联系客服人员。");
                     }
                 });  
-            }                  
-		} */
-		
-		function checkInput(){
-		
-		alert("进入函数checkInput");
-		
-		}
+ //           }                  
+		} 
 </script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700" rel="stylesheet" type="text/css">
