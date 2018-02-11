@@ -74,7 +74,7 @@ echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' ";
     list($userStatus,$userID,$userOrgID,$userLevel) = checkUser($strsql);
  
- echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>"；
+ echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>";
     
     if($userStatus = 0){
         echo "<h3>". $return_msg [1]."</h3>";
