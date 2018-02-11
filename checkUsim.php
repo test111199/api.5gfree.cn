@@ -76,7 +76,7 @@
  
 // echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>";
     
-    if($userStatus = 0){
+    if($userStatus == '0'){
         echo "<h3>". $return_msg [1]."</h3>";
         mysql_close($myconn);
         exit;
