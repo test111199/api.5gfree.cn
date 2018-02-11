@@ -55,7 +55,7 @@
     $userAccount = $_POST['accMobile'];
     $simIccid = $_POST['chkIccid'];
 
-echo "<h3>".$userAccount. "+".$simIccid."</h3>";
+//echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     $fuctionSelect = 1;
 // functionID 0:查询user是否存在，其提交ICCID是否存在，存在则查询流量
 //   $simIccid = "143DF290720F";    
@@ -74,7 +74,7 @@ echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' ";
     list($userStatus,$userID,$userOrgID,$userLevel) = checkUser($strsql);
  
- echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>";
+// echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>";
     
     if($userStatus = 0){
         echo "<h3>". $return_msg [1]."</h3>";
@@ -126,8 +126,9 @@ echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     $restData = apiCurlGet($restURL,$headerArray); 
 //    $restData = json_decode($rest,true);
    
-    $DataUsage = $restData['ctdDataUsage'];    
-    echo "<h3>用户当前使用流量为：".$DataUsage."</h3>";
+    $DataUsage = $restData['ctdDataUsage'];  
+    $usedDataMB =  $DataUsage/1024/1024;
+    echo "<h3>用户当前使用流量为：".$DataUsage."MB</h3>";
 //  var_dump(0);
 //exit;
     
