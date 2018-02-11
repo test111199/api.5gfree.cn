@@ -55,6 +55,7 @@
     $userAccount = $_POST['accMobile'];
     $simIccid = $_POST['chkIccid'];
 
+echo "<h3>".$userAccount. "+".$simIccid;
     $fuctionSelect = 1;
 // functionID 0:查询user是否存在，其提交ICCID是否存在，存在则查询流量
 //   $simIccid = "143DF290720F";    
