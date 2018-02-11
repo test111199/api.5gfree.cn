@@ -27,39 +27,38 @@
 <!-- end-smoth-scrolling -->
 <script type="text/javascript">
 	function checkInput(){
-alert("进入函数checkInput");  			
-//		    var account=document.getElementById("accMobile").value;
-//            var iccid=document.getElementById("chkIccid").value;
+// alert("进入函数checkInput");  			
+		    var account=document.getElementById("accMobile").value;
+            var iccid=document.getElementById("chkIccid").value;
  //           var functionID=document.getElementById("selFunction").value;        
-//            var accountLen=document.getElementById("accMobile").value.length;
-//            var iccidLen=document.getElementById("chkIccid").value.length;
+            var accountLen=document.getElementById("accMobile").value.length;
+            var iccidLen=document.getElementById("chkIccid").value.length;
             
-//            var reg=/^[1-9]\d*$|^0$/; 
+           var reg=/^[1-9]\d*$|^0$/; 
               
-//            if(reg.test(account)!=true or reg.test(iccid)!=true){
-//                alert("输入账号或ICCID有误，请检查是否均为正确格式");   
-//            }
-//            else 
-//            if(accountLen!=11 or iccidLen!=20 ){
-//                alert("输入账号或ICCID有误，请检查位数是否正确");
-//            }
+            if(reg.test(account)!=true or reg.test(iccid)!=true){
+                alert("输入账号或ICCID有误，请检查是否均为正确格式");   
+            }
+            else 
+            if(accountLen!=11 or iccidLen!=20 ){
+                alert("输入账号或ICCID有误，请检查位数是否正确");
+            }
  //           else{         
- //              alert("输入正确");
-              $.ajax({
-                    type: 'post',
-                    url: "http://api.5gfree.cn:8090/checkUsim.php",
-                    async:false,
-                    cache:false,
-                    data:$('#chkUsim').serialize(),
+ //          $.ajax({
+//                    type: 'post',
+//                    url: "http://api.5gfree.cn:8090/checkUsim.php",
+//                    async:false,
+//                    cache:false,
+//                    data:$('#chkUsim').serialize(),
 //                  dataType: 'json',
-                    success: function(data) {
+//                    success: function(data) {
 //alert("进入ajax success 函数内部\n 发送参数："+ functionID + "/"+iccid);               
-                        alert(data);  
-                    },
-                    error: function() {
-                        alert("数据库链接异常，请联系客服人员。");
-                    }
-                });  
+//                        alert(data);  
+//                    },
+//                    error: function() {
+//                        alert("数据库链接异常，请联系客服人员。");
+ //                   }
+ //               });  
  //           }                  
 		} 
 </script>
@@ -78,7 +77,7 @@ alert("进入函数checkInput");
             <div class="banner-info">
                 <div class="banner-info-left">
                     <h3>物联网卡信息查询</h3>
-                    <form name="chkUsim" id="chkUsim" action="index.html" method="post" >
+                    <form name="chkUsim" id="chkUsim" action="checkUsim.php" method="post" >
                         <div class="panel panel-verydanger">
                             <div class="panel-heading">请输入您的电话号码 </div>
                             <div class="panel-body">
@@ -106,6 +105,7 @@ alert("进入函数checkInput");
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="footer">
         <div class="container">
