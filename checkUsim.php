@@ -55,7 +55,7 @@
     $userAccount = $_POST['accMobile'];
     $simIccid = $_POST['chkIccid'];
 
-echo "<h3>".$userAccount. "+".$simIccid;
+echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     $fuctionSelect = 1;
 // functionID 0:查询user是否存在，其提交ICCID是否存在，存在则查询流量
 //   $simIccid = "143DF290720F";    
@@ -133,15 +133,18 @@ echo "<h3>".$userAccount. "+".$simIccid;
     function checkUser($sqlStr)
     {
         $res=mysql_query($sqlStr); 
-        if(mysql_num_rows($res)>0){
+        if(mysql_num_rows($res)>0)
+        {
             $data = mysql_fetch_array($res);
             $res_userID = $data['userID'];
             $res_userOrgID = $data['userOrgID'];
             $res_userLevel = $data['userLevel'];
             $res_status = 1;
-        }else{
+        }else
+        {
             $res_status = 0;
         }
+echo "进入用户检验程序，得到结果".$res_status."！";
         return array($res_status,$res_userID,$res_userOrgID,$res_userLevel);
     }
 
