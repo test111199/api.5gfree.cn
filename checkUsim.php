@@ -73,6 +73,8 @@ echo "<h3>".$userAccount. "+".$simIccid."</h3>";
     
     $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' ";
     list($userStatus,$userID,$userOrgID,$userLevel) = checkUser($strsql);
+ 
+ echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>"；
     
     if($userStatus = 0){
         echo "<h3>". $return_msg [1]."</h3>";
@@ -144,7 +146,7 @@ echo "<h3>".$userAccount. "+".$simIccid."</h3>";
         {
             $res_status = 0;
         }
-echo "进入用户检验程序，得到结果".$res_status."！";
+//echo "进入用户检验程序，得到结果".$res_status."！";
         return array($res_status,$res_userID,$res_userOrgID,$res_userLevel);
     }
 
