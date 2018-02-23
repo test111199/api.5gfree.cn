@@ -37,14 +37,14 @@
             </div>
             <div class="banner-info">
                 <div class="banner-info-left">
-                    <h3>物联网卡信息查询结果</h3>    
+                    <h3>物联网卡原始数据登记</h3>    
                 </div>
                 
 <?PHP
     error_reporting(E_ALL & ~E_NOTICE); 
     
     require_once  ("libs/mysql.inc.php");
-    require_once  ("libs/curlFuctions.php");
+    require_once  ("libs/PHPExcel.php");
 
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
@@ -53,11 +53,8 @@
     $simIccid = '89860617040009783269';    
 */
     $userAccount = $_POST['accMobile'];
-    $simIccid = $_POST['chkIccid'];
-
+//  var_dump($_FILES);
 //echo "<h3>".$userAccount. "+".$simIccid."</h3>";
-    $fuctionSelect = 1;
-// functionID 0:查询user是否存在，其提交ICCID是否存在，存在则查询流量
 //   $simIccid = "143DF290720F";    
     
 // echo "功能类型：".$fuctionID."-".$userAccount."-查询ICCID：".$simIccid;
@@ -81,6 +78,31 @@
         mysql_close($myconn);
         exit;
     }
+
+    if (!$_FILES['file']['error']){
+        if ($_FILES['file']['type'] == 'application/vnd.ms-excel' or $_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+            if ($_FILES['file']['size']<200000){
+//文件传到文件夹中，可以拼接时间戳，用户名等防止文件名重复
+                $file_name = "./upload/".$_FILES['file']['name'];
+                if (!file_exists($file_name)){
+                    move_uploaded_file($_FILES['file']['tmp_name'],$file_name);
+//    $filename=iconv("UTF-8","",$file_name);
+                }
+                else{
+                    echo "已经上传过该文件";                    
+                }
+            }
+            else{
+                echo "文件过大";
+                
+            }
+        }
+        else{
+            echo "文件格式错误";
+            
+        }
+ 
+}
 
 /*
     $strsql = "SELECT simStatus FROM IoT_USIM  WHERE simICCID LIKE '$simIccid%' ";
@@ -107,28 +129,10 @@
     }
  
  */   
-  
-    switch ($fuctionSelect){
-        case "1":
-            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simIccid.'/ctdUsages';
-            break;
-        case "2":
-            $restURL = 'https://api.10646.cn/rws/api/v1/devices/'.$simIccid;
-            break;
-        default:
-            echo $return_msg [4];
-            exit;
-            break;
-    }
 
     mysql_close($myconn);  
     
-    $restData = apiCurlGet($restURL,$headerArray); 
-//    $restData = json_decode($rest,true);
-   
-    $DataUsage = $restData['ctdDataUsage'];  
-    $usedDataMB =  $DataUsage/1024/1024;
-    echo "<h3>用户当前使用流量为：".number_format($usedDataMB,2)."MB</h3>";
+ 
 //  var_dump(0);
 //exit;
     
