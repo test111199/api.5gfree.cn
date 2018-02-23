@@ -101,8 +101,10 @@
             echo "文件格式错误";
             
         }
- 
-}
+    }
+    else{
+        echo"这里是文件错误代码：".$_FILES['file']['error'];
+    }
 
 /*
     $strsql = "SELECT simStatus FROM IoT_USIM  WHERE simICCID LIKE '$simIccid%' ";
