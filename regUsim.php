@@ -83,7 +83,7 @@
         if ($_FILES['file']['type'] == 'application/vnd.ms-excel' or $_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
             if ($_FILES['file']['size']<200000){
 //文件传到文件夹中，可以拼接时间戳，用户名等防止文件名重复
-                $file_name = "./upload/".$_FILES['file']['name'];
+                $file_name = "upload/".$_FILES['file']['name'];
                 if (!file_exists($file_name)){
                     move_uploaded_file($_FILES['file']['tmp_name'],$file_name);
 //    $filename=iconv("UTF-8","",$file_name);
