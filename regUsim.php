@@ -89,21 +89,21 @@
 //    $filename=iconv("UTF-8","",$file_name);
                 }
                 else{
-                    echo "已经上传过该文件";                    
+                    echo "已经上传过该文件".$file_name;                    
                 }
             }
             else{
-                echo "文件过大";
+                echo "文件过大".$_FILES['file']['size'];
                 
             }
         }
         else{
-            echo "文件格式错误";
+            echo "文件格式错误!".$_FILES['file']['type'];
             
         }
     }
     else{
-        echo"这里是文件错误代码：".$_FILES['file']['error'];
+        echo"这里是上传文件错误代码：".$_FILES['file']['error'];
     }
 
 /*
