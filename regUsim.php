@@ -92,8 +92,8 @@
                     echo "已经上传过该文件".$file_name;                    
                 $getExeclData = array();		
                 $getExeclData = importExecl($file_name, 0);
-                $getData = json_encode($getExeclData);
-var_dump($getData);		
+//                $getData = json_encode($getExeclData);
+var_dump($getExeclData);		
               
                 }
 //            }
