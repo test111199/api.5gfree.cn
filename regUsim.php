@@ -105,7 +105,7 @@
 //                echo "文件过大".$_FILES['file']['size'];
                 
 //            }
-//        }
+        }
         else{
             echo "文件格式错误!".$_FILES['file']['type'];
             
