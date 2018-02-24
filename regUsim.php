@@ -90,15 +90,11 @@
                 }
                 else{
                     echo "已经上传过该文件".$file_name;                    
-                		$getExeclData = importExecl($file_name, 0);
-                		
-                    for($i=0;$i<10;$i++){
-                    		for($j=0;$j<16;$j++)
-							{
-							   echo $i.$getExeclData[$i][$j];
-							}
-						}
-                    
+                $getExeclData = array();		
+                $getExeclData = importExecl($file_name, 0);
+                $getData = json_encode($getExeclData);
+var_dump($getData);		
+              
                 }
 //            }
 //            else{
