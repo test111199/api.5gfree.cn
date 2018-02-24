@@ -80,7 +80,7 @@
     }
 
     if (!$_FILES['file']['error']){
-//        if ($_FILES['file']['type'] == 'application/vnd.ms-excel' or $_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+		if ($_FILES['file']['type'] == 'application/vnd.ms-excel' or $_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
 //            if ($_FILES['file']['size']<200000){
 //文件传到文件夹中，可以拼接时间戳，用户名等防止文件名重复
                 $file_name = "upload/".$_FILES['file']['name'];
@@ -91,7 +91,14 @@
                 else{
                     echo "已经上传过该文件".$file_name;                    
                 		$getExcelData = importExcel($file_name, 0);
-                
+                		
+                    for($i=0;$i<10;$i++){
+                    		for($j=0;$j<16;$j++)
+							{
+							   echo $i.$getExcelData[$i][$j];
+							}
+						}
+                    
                 }
 //            }
 //            else{
@@ -99,10 +106,10 @@
                 
 //            }
 //        }
-//        else{
-//            echo "文件格式错误!".$_FILES['file']['type'];
+        else{
+            echo "文件格式错误!".$_FILES['file']['type'];
             
- //       }
+       }
     }
     else{
         echo"这里是上传文件错误代码：".$_FILES['file']['error'];
