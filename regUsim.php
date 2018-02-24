@@ -44,7 +44,7 @@
     error_reporting(E_ALL & ~E_NOTICE); 
     
     require_once  ("libs/mysql.inc.php");
-    require_once  ("libs/excelFunction.php");
+    require_once  ("libs/execlFunction.php");
 
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
@@ -90,12 +90,12 @@
                 }
                 else{
                     echo "已经上传过该文件".$file_name;                    
-                		$getExcelData = importExcel($file_name, 0);
+                		$getExeclData = importExecl($file_name, 0);
                 		
                     for($i=0;$i<10;$i++){
                     		for($j=0;$j<16;$j++)
 							{
-							   echo $i.$getExcelData[$i][$j];
+							   echo $i.$getExeclData[$i][$j];
 							}
 						}
                     
