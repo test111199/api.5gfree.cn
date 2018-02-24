@@ -44,7 +44,7 @@
     error_reporting(E_ALL & ~E_NOTICE); 
     
     require_once  ("libs/mysql.inc.php");
-    require_once  ("libs/excelFuntion.php");
+    require_once  ("libs/excelFunction.php");
 
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
