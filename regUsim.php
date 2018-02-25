@@ -45,6 +45,7 @@
     
     require_once  ("libs/mysql.inc.php");
     require_once  ("libs/execlFunction.php");
+    require_once  ("libs/regUsimFunction.php");
 
 /*    
     $fuctionID = $_POST['sndFuction_ID'];
@@ -81,21 +82,28 @@
 
     if (!$_FILES['file']['error']){
 		if ($_FILES['file']['type'] == 'application/vnd.ms-excel' or $_FILES['file']['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
-//            if ($_FILES['file']['size']<200000){
+//        if ($_FILES['file']['size']<200000){
 //文件传到文件夹中，可以拼接时间戳，用户名等防止文件名重复
-                $file_name = "upload/".$_FILES['file']['name'];
-                if (!file_exists($file_name)){
-                    move_uploaded_file($_FILES['file']['tmp_name'],$file_name);
+             $file_name = "upload/".$_FILES['file']['name'];
+             if (!file_exists($file_name)){
+                move_uploaded_file($_FILES['file']['tmp_name'],$file_name);
 //    $filename=iconv("UTF-8","",$file_name);
-                }
-                else{
-                    echo "已经上传过该文件".$file_name;                    
-                $getExeclData = array();		
+				}
+				else{
+                $getExeclData = array();
                 $getExeclData = importExecl($file_name, 0);
-//                $getData = json_encode($getExeclData);
-var_dump($getExeclData);		
-              
+//var_dump($getExeclData);
+                $dataLenght = count($getExeclData,COUNT_NORMAL);
+                for($i = 0;$i < $dataLenght;$i++){
+                   
+						echo "获得数组内容：".$i."-";
+                		$returnNum = ckeckIccidExists($getExeclData,$i);
+                		echo "-".$returnNum."<br>\n";
+             
                 }
+                 echo "已经上传过该文件".$file_name."<br>"; 
+	            
+             }
 //            }
 //            else{
 //                echo "文件过大".$_FILES['file']['size'];
