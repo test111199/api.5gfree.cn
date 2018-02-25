@@ -97,7 +97,7 @@
                 for($i = 0;$i < $dataLenght;$i++){
                    
 						echo "获得数组内容：".$i."-";
-                		$returnNum = ckeckIccidExists($getExeclData,$i);
+                		$returnNum = checkIccidExists($getExeclData,$i);
                 		echo "-".$returnNum."<br>\n";
              
                 }
