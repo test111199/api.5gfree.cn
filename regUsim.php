@@ -93,7 +93,7 @@
                 $getExeclData = array();
                 $getExeclData = importExecl($file_name, 0);
 var_dump($getExeclData[0][0]);
-echo "<br> echo二维数组值：".$getExeclData[0][3];
+echo "<br> echo二维数组值：";
                 $dataLenght = count($getExeclData,COUNT_NORMAL);
 
                 for($i = 0;$i < $dataLenght;$i++){
