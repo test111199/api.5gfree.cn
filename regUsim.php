@@ -96,7 +96,7 @@ var_dump($getExeclData[0][0]);
 echo "<br> echo二维数组值：";
                 $dataLenght = count($getExeclData,COUNT_NORMAL);
 
-                for($i = 0;$i < $dataLenght;$i++){
+                for($i = 0;$i < 2;$i++){
                    
 						echo "获得数组内容：".$i."-";
                 		$returnNum = checkIccidExists($getExeclData,$i);
