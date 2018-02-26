@@ -1,7 +1,7 @@
 <?PHP
 
 $lastUpdate = date("YmdH");
-echo "最后更新时间为：".$lastUpdate;
+echo "最后更新时间为：".$lastUpdate."<br>\n";
 
 function checkIccidExists(&$getArray,$arrayRow)
 {

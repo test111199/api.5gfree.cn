@@ -92,8 +92,10 @@
 				else{
                 $getExeclData = array();
                 $getExeclData = importExecl($file_name, 0);
-//var_dump($getExeclData);
+var_dump($getExeclData[0][1]);
+echo "<br> echo二维数组值：".$getExeclData[0][3];
                 $dataLenght = count($getExeclData,COUNT_NORMAL);
+
                 for($i = 0;$i < $dataLenght;$i++){
                    
 						echo "获得数组内容：".$i."-";
@@ -101,7 +103,7 @@
                 		echo "-".$returnNum."<br>\n";
              
                 }
-                 echo "已经上传过该文件".$file_name."<br>"; 
+                 echo "<br> 已经上传过该文件".$file_name."<br>"; 
 	            
              }
 //            }
