@@ -92,18 +92,18 @@
 				else{
                 $getExeclData = array();
                 $getExeclData = importExecl($file_name, 0);
-var_dump($getExeclData[1]["A"]);
-echo "<br> echo二维数组值：".$getExeclData[1]["A"];
+//var_dump($getExeclData[1]["A"]);
+//echo "<br> echo二维数组值：".$getExeclData[1]["A"];
                 $dataLenght = count($getExeclData,COUNT_NORMAL);
-/*
-                for($i = 0;$i < 2;$i++){
+
+                for($i = 1;$i < 5;$i++){
                    
 						echo "获得数组内容：".$i."-";
                 		$returnNum = checkIccidExists($getExeclData,$i);
                 		echo "-".$returnNum."<br>\n";
              
                 }
-*/                
+                
                  echo "<br> 已经上传过该文件".$file_name."<br>"; 
 	            
              }
