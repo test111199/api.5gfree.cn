@@ -92,13 +92,13 @@
 				else{
                 $getExeclData = array();
                 $getExeclData = importExecl($file_name, 0);
-var_dump($getExeclData[1][1]);
+//var_dump($getExeclData[1][1]);
 //echo "<br> echo二维数组值：".$getExeclData[1]["A"];
                 $dataLenght = count($getExeclData,COUNT_NORMAL);
 
-                for($i = 1;$i < 5;$i++){
+                for($i = 1;$i < $dataLenght;$i++){
                    
-						echo "获得数组内容：".$i."-";
+						echo "数组：".$i."-";
                 		$returnNum = checkIccidExists($getExeclData,$i);
                 		echo "-".$returnNum."<br>\n";
              
