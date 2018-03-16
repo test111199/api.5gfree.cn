@@ -38,9 +38,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">2DP IoT</a>
+          <a class="brand" href="index.php">2DP IoT</a>
           <div class="btn-group pull-right">
-			<a class="btn" href="my-profile.html"><i class="icon-user"></i> Admin</a>
+			<a class="btn" href="my-profile.html"><i class="icon-user"></i><?php $_COOKIE['loginUser'] ?> </a>
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <span class="caret"></span>
             </a>
@@ -50,10 +50,10 @@
               <li><a href="doLogout.php">退出</a></li>
             </ul>
           </div>
+<!--          
           <div class="nav-collapse">
             <ul class="nav">
 			<li><a href="index.php">首页</a></li>
-<!--			
               <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">用户 <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="new-user.html">新建用户</a></li>
@@ -69,9 +69,9 @@
 				</ul>
 			  </li>
 			  <li><a href="stats.html">统计</a></li>
--->			  
             </ul>
           </div>
+-->          
         </div>
       </div>
     </div>
