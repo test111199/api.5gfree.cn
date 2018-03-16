@@ -119,6 +119,8 @@
 	<script src="js/jquery.flot.js"></script>
 	<script src="js/jquery.flot.resize.js"></script>	
 	<script src="js/bootstrap.min.js"></script>
+
+<!--
 	<script>
 	$(function () {
 		var data = [
@@ -214,5 +216,6 @@
 		$.plot( $("#visits") , dataVisits, optionsVisits );
 	});
 	</script>
+-->	
   </body>
 </html>
