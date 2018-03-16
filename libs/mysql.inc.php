@@ -6,6 +6,8 @@
     $mysql_username="root"; // 连接数据库用户名
     $mysql_password="2DP2IoT"; // 连接数据库密码
     $mysql_database="2DPIot"; // 数据库的名字
+    $PWsalt = "IoT2DP";
+    GLOBAL $PWsalt;
     
     // 连接到数据库
     $myconn=mysql_connect("$mysql_server_name:$mysql_port", $mysql_username,$mysql_password);
