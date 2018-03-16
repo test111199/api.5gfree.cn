@@ -7,8 +7,9 @@
     $userPassword = $_POST['password'];
     
     $savePassword = base64_encode($PWSalt.$userPassword);
-    $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$savePassword' ";
+    $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' ";
     $res=mysql_query($sqlStr); 
+var_dump($res);
     if(mysql_num_rows($res)>0){
         setcookie('loginStat',1,time()+600);
         setcookie('loginUser','Test',time()+600);
