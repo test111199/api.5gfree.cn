@@ -185,7 +185,7 @@
             $res_simICCID = $data['simICCID'];
             $res_status = 1;
         }else{
-             $res_status = 0;
+            $res_status = 0;
         }
         return array($res_status,$res_simICCID,$res_simUserID,$res_simOrgID);
     }
