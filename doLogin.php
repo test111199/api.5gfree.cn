@@ -1,5 +1,5 @@
 <?php 
 
-echo "<a href='index.html'>我的资料</a>";
+echo "<a href='index.php'>测试我的资料</a>";
 
 ?>
