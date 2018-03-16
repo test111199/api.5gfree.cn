@@ -8,7 +8,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="utf-8">  
 	<title>2DP IoT 管理平台</title>
@@ -47,12 +47,13 @@
             <ul class="dropdown-menu">
 			  <li><a href="my-profile.html">用户资料</a></li>
               <li class="divider"></li>
-              <li><a href="#">退出</a></li>
+              <li><a href="doLogout.php">退出</a></li>
             </ul>
           </div>
           <div class="nav-collapse">
             <ul class="nav">
-			<li><a href="index.html">首页</a></li>
+			<li><a href="index.php">首页</a></li>
+<!--			
               <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">用户 <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="new-user.html">新建用户</a></li>
@@ -68,6 +69,7 @@
 				</ul>
 			  </li>
 			  <li><a href="stats.html">统计</a></li>
+-->			  
             </ul>
           </div>
         </div>
