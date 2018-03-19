@@ -7,10 +7,10 @@
     $userPassword = $_POST['password'];
     
     $savePassword = base64_encode($PWSalt.$userPassword);
-    $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$userPassword' ";
+    $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$savePassword' ";
     $res=mysql_query($sqlStr); 
-// echo   $sqlStr; 
-// var_dump($res);
+ echo   $sqlStr; 
+ var_dump($res);
     if(mysql_num_rows($res)>0){
         $data = mysql_fetch_array($res);
         $userName = $data['userName'];
