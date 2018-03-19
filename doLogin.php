@@ -22,6 +22,6 @@
     }
     else{
         echo"<script>alert('输入用户名密码错误！')</script>";
-        header("Location:login.html");
+//        header("Location:login.html");
     }
 ?>
