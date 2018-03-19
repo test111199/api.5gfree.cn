@@ -2,7 +2,7 @@
     error_reporting(E_ALL & ~E_NOTICE); 
       
     if($_COOKIE['loginRole'] >0){
-        setcookie('loginRole',0);
+        setcookie('loginRole','');
         setcookie('loginUser','');
         header("Location:login.html");
         mysql_close($myconn);  
