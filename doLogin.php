@@ -6,6 +6,7 @@
     $userAccount = $_POST['userAccount'];
     $userPassword = $_POST['password'];
     
+    
     $savePassword = base64_encode($PWSalt.$userPassword);
     $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$savePassword' ";
     $res=mysql_query($sqlStr); 
@@ -21,5 +22,6 @@
     }
     else{
         echo"<script>alert('输入用户名密码错误！')</script>";
+        header("Location:login.html");
     }
 ?>
