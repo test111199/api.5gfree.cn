@@ -40,7 +40,7 @@
           </a> 
           <a class="brand" href="index.php">2DP IoT</a>
           <div class="btn-group pull-right">
-			<a class="btn" href="my-profile.html"><i class="icon-user"></i><?php $_COOKIE['loginUser'] ?> </a>
+			<a class="btn" href="my-profile.html"><i class="icon-user"></i><?php echo $_COOKIE['loginUser'] ?> </a>
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <span class="caret"></span>
             </a>
