@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 
 // setcookoe('loginStat',1,time()+600);
     if($_COOKIE['loginUser'] =='' && $_COOKIE['loginRole'] < 1){
@@ -102,7 +102,7 @@
 		  <div class="row-fluid">
 			<div class="page-header">
 				<h1>网站统计 <small></small></h1>
-				
+				<iframe id="actionFrame" src="usimStat.php">
 			</div>
 			<div id="placeholder" style="width:80%;height:300px;"></div>
 			<br />
@@ -124,6 +124,11 @@
 	<script src="js/jquery.flot.resize.js"></script>	
 	<script src="js/bootstrap.min.js"></script>
 
+    <script>
+      function actionFunction (menuAction) {
+        document.getElementById("actionFrame").src=menuAction;
+      }
+    </script>
 <!--
 	<script>
 	$(function () {
