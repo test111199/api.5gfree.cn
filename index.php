@@ -81,7 +81,12 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-            <?php include("menuID1.html") ?>
+            <?php  
+                if($_COOKIE['loginRole'] > 5)
+                {
+                    include("menuID1.html") ;
+                }
+            ?>
               <li class="nav-header"><i class="icon-signal"></i> 业务管理</li>
               <li class="active"><a href="stats.html">通用</a></li>
               <li><a href="user-stats.html">用户</a></li>
