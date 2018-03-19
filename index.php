@@ -33,11 +33,13 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
+<!--
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </a> 
+-->
           <a class="brand" href="index.php">2DP IoT</a>
           <div class="btn-group pull-right">
 			<a class="btn" href="my-profile.html"><i class="icon-user"></i><?php $_COOKIE['loginUser'] ?> </a>
@@ -81,9 +83,7 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"><i class="icon-wrench"></i> 用户管理</li>
-              <li><a href="users.html">用户</a></li>
-              <li><a href="roles.html">角色</a></li>
+            <?php inculde("menuID1.html") ?>
               <li class="nav-header"><i class="icon-signal"></i> 业务管理</li>
               <li class="active"><a href="stats.html">通用</a></li>
               <li><a href="user-stats.html">用户</a></li>
@@ -99,6 +99,7 @@
 		  <div class="row-fluid">
 			<div class="page-header">
 				<h1>网站统计 <small></small></h1>
+				
 			</div>
 			<div id="placeholder" style="width:80%;height:300px;"></div>
 			<br />
