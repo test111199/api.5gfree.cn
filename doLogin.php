@@ -11,7 +11,7 @@
     $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$savePassword' ";
     $res=mysql_query($sqlStr); 
  echo   $sqlStr; 
- var_dump($res);
+// var_dump($res);
     if(mysql_num_rows($res)>0){
         $data = mysql_fetch_array($res);
         $userName = $data['userName'];
@@ -22,6 +22,7 @@
     }
     else{
         echo"<script>alert('输入用户名密码错误！')</script>";
-//        header("Location:login.html");
+        sleep(1);
+        header("Location:login.html");
     }
 ?>
