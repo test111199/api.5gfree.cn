@@ -1,7 +1,7 @@
 ﻿<?php 
 
 // setcookoe('loginStat',1,time()+600);
-    if($_COOKIE['loginStat'] !=1){
+    if($_COOKIE['loginUser'] =='' && $_COOKIE['loginRole'] < 1){
          header("location:login.html") ;      
     }
 
