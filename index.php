@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a> 
-          <a class="brand" href="index.php"><B>2DP IoT</B></a>
+          <a class="brand" href="index.php"><H3>2DP IoT</H3></a>
           <div class="btn-group pull-right">
 			<a class="btn" href="my-profile.html"><i class="icon-user"></i> <?php echo $_COOKIE['loginUser'] ?> </a>
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -102,7 +102,7 @@
 		  <div class="row-fluid">
 			<div class="page-header">
 				<h1>网站统计 <small></small></h1>
-				<iframe id="actionFrame" src="usimStat.php">
+				<iframe id="actionFrame" src="regUsim.html">
 			</div>
 			<div id="placeholder" style="width:80%;height:300px;"></div>
 			<br />
