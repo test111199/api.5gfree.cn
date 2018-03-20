@@ -1,7 +1,7 @@
 <?php 
 
 // setcookoe('loginStat',1,time()+600);
-    if($_COOKIE['loginUser'] =='' && $_COOKIE['loginRole'] < 1){
+    if(@$_COOKIE['loginUser'] =='' && @$_COOKIE['loginRole'] < 1){
          header("location:login.html") ;      
     }
 
@@ -40,7 +40,7 @@
           </a> 
           <a class="brand" href="index.php"><H3>2DP IoT</H3></a>
           <div class="btn-group pull-right">
-			<a class="btn" href="my-profile.html"><i class="icon-user"></i> <?php echo $_COOKIE['loginUser'] ?> </a>
+			<a class="btn" href="my-profile.html"><i class="icon-user"></i> <?php echo @$_COOKIE['loginUser'] ?> </a>
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
               <span class="caret"></span>
             </a>
@@ -82,7 +82,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
             <?php  
-                if($_COOKIE['loginRole'] > 5)
+                if(@$_COOKIE['loginRole'] > 5)
                 {
                     include("menuID1.html") ;
                 }

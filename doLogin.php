@@ -16,6 +16,7 @@
 //        $data = mysqli_fetch_array($res);
         $userName = $data['userName'];
         $userRole = $data['userRole'];
+    
         setcookie('loginUser',$userName,time()+600);
         setcookie('loginRole',$userRole,time()+600);
         header("Location:index.php");
