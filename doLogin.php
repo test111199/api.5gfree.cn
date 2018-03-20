@@ -9,11 +9,11 @@
     
     $savePassword = base64_encode($PWSalt.$userPassword);
     $sqlStr = "SELECT * FROM IoT_User WHERE userAccount = '$userAccount' AND userPassword = '$savePassword' ";
-    $res=mysql_query($sqlStr); 
+    $res=mysqli_query($myconn,$sqlStr); 
  echo   $sqlStr; 
-// var_dump($res);
-    if(mysql_num_rows($res)>0){
-        $data = mysql_fetch_array($res);
+ var_dump($res);
+    if($data = mysqli_fetch_array($res)){
+//        $data = mysqli_fetch_array($res);
         $userName = $data['userName'];
         $userRole = $data['userRole'];
         setcookie('loginUser',$userName,time()+600);

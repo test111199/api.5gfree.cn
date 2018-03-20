@@ -5,7 +5,7 @@
         setcookie('loginRole','');
         setcookie('loginUser','');
         header("Location:login.html");
-        mysql_close($myconn);  
+        mysqli_close($myconn);  
     }
     else{
         echo"<script>alert('已经登出！')</script>";
