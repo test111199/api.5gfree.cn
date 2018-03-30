@@ -83,9 +83,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
 <?php  
-//    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN (SELECT IoT_Role.roleItems from IoT_Role WHERE roleID = @$_COOKIE['loginRole'])";
-    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN (10,11,12)";
+    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN (SELECT IoT_Role.roleItems from IoT_Role WHERE roleID = @$_COOKIE['loginRole'])";
+//    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN (10,11,12)";
+echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
+print_r($res);
     $data = mysqli_fetch_array($res);
 //    print_r($data);
     foreach ($data as $value) {
