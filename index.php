@@ -89,7 +89,7 @@ echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
 echo $res;
     $data = mysqli_fetch_array($res);
-//    print_r($data);
+print_r($data);
     foreach ($data as $value) {
        echo $value."<br/>";
     }
