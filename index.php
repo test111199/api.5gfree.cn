@@ -87,7 +87,7 @@
     $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN (10,11,12)";
 echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
-echo $res;
+//echo $res;
     $data = mysqli_fetch_array($res);
 print_r($data);
     foreach ($data as $value) {
