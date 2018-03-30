@@ -5,6 +5,7 @@
          header("location:login.html") ;      
     }
 
+    require_once  ("libs/mysql.inc.php");
 ?>
 
 <!DOCTYPE html>
