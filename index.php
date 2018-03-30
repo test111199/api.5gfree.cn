@@ -89,10 +89,8 @@ echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
 //echo $res;
     $data = mysqli_fetch_array($res);
-print_r($data);
-    foreach ($data as $value) {
-       echo $value."<br/>";
-    }
+var_dump($data);
+
 ?>
 <!--              <li class="nav-header"><i class="icon-wrench"></i> 系统管理</li>
               <li><a href="users.html">用户</a></li>
