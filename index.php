@@ -88,9 +88,10 @@
     $data = mysqli_fetch_array($res);
     echo   $data;
 ?>
-              <li class="nav-header"><i class="icon-wrench"></i> 系统管理</li>
+<!--              <li class="nav-header"><i class="icon-wrench"></i> 系统管理</li>
               <li><a href="users.html">用户</a></li>
               <li><a href="roles.html">角色</a></li>
+-->
               <li class="nav-header"><i class="icon-signal"></i> 业务管理</li>
               <li class="active"><a href="stats.html">通用</a></li>
               <li><a href="">用户</a></li>
