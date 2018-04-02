@@ -88,7 +88,7 @@
 echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
 //var_dump($res);
-    if(!$res$res){die("读取数据错误！");}
+    if(!$res){die("读取数据错误！");}
     while($data = mysqli_fetch_row($res)){
 //$data = mysqli_fetch_array($res)   
 //var_dump($data); 
