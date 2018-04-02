@@ -87,9 +87,13 @@
     $sqlStr = "SELECT menuStr FROM IoT_Menu WHERE menuLevelID IN (10,11,12)";
 echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
-var_dump($res);
-    $data = mysqli_fetch_array($res);
-var_dump($data);
+//var_dump($res);
+    if(!$res$res){die("读取数据错误！");}
+    while($data = mysqli_fetch_row($res)){
+//$data = mysqli_fetch_array($res)   
+//var_dump($data); 
+    echo $data[0];
+    }
 
 ?>
 <!--              <li class="nav-header"><i class="icon-wrench"></i> 系统管理</li>
