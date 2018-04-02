@@ -85,11 +85,11 @@
 <?php  
 //    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN CAST('SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole']."' as signed integer)";
     $sqlStr = "SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole'];
-echo $sqlStr;
+//echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
     $data = mysqli_fetch_array($res);     
     $sqlStr = "SELECT menuStr FROM IoT_Menu WHERE menuLevelID IN (".$data[0].")";
-echo $sqlStr;
+//echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
 //var_dump($res);
     if(!$res){die("读取数据错误！");}
