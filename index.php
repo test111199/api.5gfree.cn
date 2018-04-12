@@ -84,7 +84,7 @@
             <ul class="nav nav-list">
 <?php  
 //    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN CAST('SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole']."' as signed integer)";
- if(.$_COOKIE['loginRole'] != 9)
+ if($_COOKIE['loginRole'] != 9)
  {
     $sqlStr = "SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole'];
 //echo $sqlStr;
