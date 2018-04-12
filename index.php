@@ -84,12 +84,18 @@
             <ul class="nav nav-list">
 <?php  
 //    $sqlStr = "SELECT IoT_Menu.menuStr FROM IoT_Menu WHERE menuLevelID IN CAST('SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole']."' as signed integer)";
+ if(.$_COOKIE['loginRole'] != 9)
+ {
     $sqlStr = "SELECT IoT_Role.roleItems from IoT_Role WHERE roleID =" .$_COOKIE['loginRole'];
 //echo $sqlStr;
     $res=mysqli_query($myconn,$sqlStr); 
     $data = mysqli_fetch_array($res);     
-    $sqlStr = "SELECT menuStr FROM IoT_Menu WHERE menuLevelID IN (".$data[0].")";
+    $sqlStr = "SELECT menuStr FROM IoT_Menu WHERE menuLevelID IN (".$data[0].") ORDER BY menuLevelID";
 //echo $sqlStr;
+ }
+ else{
+    $sqlStr = "SELECT menuStr FROM IoT_Menu ORDER BY menuLevelID ";
+}
     $res=mysqli_query($myconn,$sqlStr); 
 //var_dump($res);
     if(!$res){die("读取数据错误！");}
@@ -103,11 +109,11 @@
 <!--              <li class="nav-header"><i class="icon-wrench"></i> 系统管理</li>
               <li><a href="users.html">用户</a></li>
               <li><a href="roles.html">角色</a></li>
--->
               <li class="nav-header"><i class="icon-signal"></i> 业务管理</li>
               <li class="active"><a href="stats.html">通用</a></li>
               <li><a href="">用户</a></li>
               <li><a href="visitor-stats.html">访问者</a></li>
+-->
               <li class="nav-header"><i class="icon-user"></i> 我的账户</li>
               <li><a href="my-profile.html">我的资料</a></li>
 			  <li><a href="doLogout.php">退出</a></li> 
