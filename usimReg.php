@@ -123,8 +123,16 @@
         <div class="span9">
 		  <div class="row-fluid">
 			<div class="page-header">
-				<h1>我的资料 <small></small></h1>		
-						
+				<h1>USIM 卡手动登记 <small></small></h1>	
+					<form name="regUsim" id="regUsim" action="doRegUsim.php" method="post" enctype="multipart/form-data">
+					    <div class="panel panel-verydanger">
+                            <div class="panel-heading">请提交您的Excel文档 </div>
+                            <div class="panel-body">
+                                <input name="file" id ="file" type="file"  />
+                            </div>                               
+                        </div>
+                        <input type="submit" value="提交" > 
+                    </form> 
 			</div>
 			<div id="placeholder" style="width:80%;height:300px;"></div>
 			<br />
